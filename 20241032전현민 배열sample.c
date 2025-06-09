@@ -19,21 +19,21 @@ int main() {
     }
 
     average = calculateAverage(scores, 30);
-    printf("ÇĞ±Ş Æò±Õ Á¡¼ö: %.2f\n", average);
+    printf("í•™ê¸‰ í‰ê·  ì ìˆ˜: %.2f\n", average);
 
-    printf("ÇĞ»ı ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä (1 ~ 30): ");
+    printf("í•™ìƒ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” (1 ~ 30): ");
     scanf_s("%d", &studentNumber);
 
     int score = getStudentScore(scores, 30, studentNumber);
     if (score != -1) {
-        printf("%d¹ø ÇĞ»ıÀÇ Á¡¼ö: %d\n", studentNumber, score);
+        printf("%dë²ˆ í•™ìƒì˜ ì ìˆ˜: %d\n", studentNumber, score);
     }
     else {
-        printf("À¯È¿ÇÏÁö ¾ÊÀº ÇĞ»ı ¹øÈ£ÀÔ´Ï´Ù.\n");
+        printf("ìœ íš¨í•˜ì§€ ì•Šì€ í•™ìƒ ë²ˆí˜¸ì…ë‹ˆë‹¤.\n");
     }
 
-    printf("\n[ÇĞ»ı Á¤º¸ Ãâ·Â ¿É¼Ç ¼±ÅÃ]\n");
-    printf("0: ÀüÃ¼ ÇĞ»ı\n1: Æò±Õ ÀÌ»ó\n2: Æò±Õ ¹Ì¸¸\n¿É¼Ç ¼±ÅÃ: ");
+    printf("\n[í•™ìƒ ì •ë³´ ì¶œë ¥ ì˜µì…˜ ì„ íƒ]\n");
+    printf("0: ì „ì²´ í•™ìƒ\n1: í‰ê·  ì´ìƒ\n2: í‰ê·  ë¯¸ë§Œ\nì˜µì…˜ ì„ íƒ: ");
     scanf_s("%d", &option);
 
     printScore(scores, 30, average, option);
@@ -59,12 +59,12 @@ int getStudentScore(int scores[], int size, int studentNumber) {
 }
 
 void printScore(int scores[], int size, double average, int option) {
-    printf("\n=== ÇĞ»ı Á¡¼ö Ãâ·Â ===\n");
+    printf("\n=== í•™ìƒ ì ìˆ˜ ì¶œë ¥ ===\n");
     for (int i = 0; i < size; i++) {
         if (option == 0 ||
             (option == 1 && scores[i] >= average) ||
             (option == 2 && scores[i] < average)) {
-            printf("%2d¹ø ÇĞ»ı: %3dÁ¡\n", i + 1, scores[i]);
+            printf("%2dë²ˆ í•™ìƒ: %3dì \n", i + 1, scores[i]);
         }
     }
 }
